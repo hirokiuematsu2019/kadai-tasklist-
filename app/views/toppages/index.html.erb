@@ -1,0 +1,18 @@
+<% if logged_in? %>
+
+  <p>ログイン完了ユーザ: 
+<%= current_user.name %>
+<%= link_to 'Continue',tasks_path, class: 'btn btn-lg btn-primary' %>
+<%= link_to 'Logout',logout_path, class: 'btn btn-lg btn-primary' ,method: :delete %>
+</p>
+<% else %>
+
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>タスク管理アプリへようこそ</h1>
+      
+<%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+
+    </div>
+  </div>
+<% end %>
