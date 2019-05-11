@@ -2,6 +2,18 @@
   <h1>Sign up</h1>
 </div>
 
+<%= form_with(model: @user, local: true) do |f| %>
+    <% if @user.errors.any? %>
+    <div id="error_explanation">
+        <ul>
+            <% @user.errors.full_messages.each do |usr| %>
+                <li><%= usr %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<% end %>
+
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
 
